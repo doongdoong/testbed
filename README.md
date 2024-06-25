@@ -4,4 +4,5 @@
 - Docker
   - MySQL
 - JPA
+  - Querydsl
 - flyway

@@ -1,10 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+	val kotlinVersion = "1.9.24"
+
 	id("org.springframework.boot") version "3.3.0" apply false
 	id("io.spring.dependency-management") version "1.1.5" apply false
-	kotlin("jvm") version "1.9.24"
-	kotlin("plugin.spring") version "1.9.24" apply false
+	kotlin("jvm") version kotlinVersion
+	kotlin("plugin.spring") version kotlinVersion apply false
+	kotlin("kapt") version kotlinVersion apply false
 }
 
 allprojects {
@@ -37,7 +40,7 @@ subprojects {
 	apply(plugin = "io.spring.dependency-management")
 	apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 	apply(plugin = "kotlin")
-	apply(plugin = "kotlin-kapt")
+	apply(plugin = "org.jetbrains.kotlin.kapt")
 
 	dependencies {
 		implementation("org.springframework.boot:spring-boot-starter")
