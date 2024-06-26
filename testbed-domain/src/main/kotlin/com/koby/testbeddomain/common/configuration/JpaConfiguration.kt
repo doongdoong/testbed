@@ -1,4 +1,4 @@
-package com.koby.testbeddomain.configuration
+package com.koby.testbeddomain.common.configuration
 
 import jakarta.persistence.EntityManagerFactory
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties

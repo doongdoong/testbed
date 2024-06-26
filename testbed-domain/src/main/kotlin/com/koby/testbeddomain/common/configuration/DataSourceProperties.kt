@@ -1,4 +1,4 @@
-package com.koby.testbeddomain.configuration
+package com.koby.testbeddomain.common.configuration
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.stereotype.Component

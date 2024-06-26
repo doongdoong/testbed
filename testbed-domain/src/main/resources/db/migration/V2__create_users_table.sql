@@ -5,7 +5,7 @@ create table testbed.users
     email        varchar(255) not null,
     date_created DATETIME     not null,
     date_updated DATETIME     not null,
-    date_deleted DATETIME     not null,
+    date_deleted DATETIME     null,
     constraint users_pk
         primary key (id)
 );

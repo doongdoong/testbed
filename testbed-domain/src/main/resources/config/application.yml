@@ -26,5 +26,8 @@ spring:
     properties:
       hibernate:
         format_sql: true # sql을 보기 좋게 출력
+        implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        default_batch_fetch_size: 1000
   flyway:
     enabled: false

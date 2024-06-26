@@ -1,4 +1,4 @@
-package com.koby.testbeddomain.configuration
+package com.koby.testbeddomain.common.configuration
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
