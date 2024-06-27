@@ -1,5 +1,7 @@
 package com.koby.testbeddomain.domain.user.service
 
+import com.koby.testbeddomain.common.exception.CustomServerException
+import com.koby.testbeddomain.common.exception.ErrorCode
 import com.koby.testbeddomain.domain.user.dto.UserDto
 import com.koby.testbeddomain.domain.user.repository.mysql.UserRepository
 import org.springframework.stereotype.Service
@@ -15,5 +17,6 @@ class UserService(
 
     fun getUserByEmail(email: String): UserDto? {
         return userRepository.findByEmail(email)?.let { UserDto.from(it) }
+            ?: throw CustomServerException(ErrorCode.USER_NOT_FOUND)
     }
 }
