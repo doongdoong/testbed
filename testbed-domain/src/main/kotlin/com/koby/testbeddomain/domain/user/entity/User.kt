@@ -1,6 +1,6 @@
 package com.koby.testbeddomain.domain.user.entity
 
-import com.koby.testbeddomain.common.entity.BaseTimeEntity
+import com.koby.testbeddomain.common.model.BaseTimeEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

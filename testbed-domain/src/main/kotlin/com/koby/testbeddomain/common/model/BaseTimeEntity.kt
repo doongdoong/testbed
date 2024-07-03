@@ -1,4 +1,4 @@
-package com.koby.testbeddomain.common.entity
+package com.koby.testbeddomain.common.model
 
 import jakarta.persistence.EntityListeners
 import jakarta.persistence.MappedSuperclass
