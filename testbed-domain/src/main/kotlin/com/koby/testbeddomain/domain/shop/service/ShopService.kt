@@ -11,4 +11,8 @@ class ShopService(
     fun getAllShops(): List<ShopDto> {
         return shopRepository.findAll().map { ShopDto.from(it) }
     }
+
+    fun getAllShopsWithFetchJoin(): List<ShopDto> {
+        return shopRepository.findAllWithFetchJoin().map { ShopDto.from(it) }
+    }
 }

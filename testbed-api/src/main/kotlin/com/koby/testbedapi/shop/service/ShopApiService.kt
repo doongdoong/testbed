@@ -9,6 +9,6 @@ class ShopApiService(
     private val shopService: ShopService,
 ) {
     fun getAllShops(): List<ShopResponseDto> {
-        return shopService.getAllShops().map { ShopResponseDto.from(it) }
+        return shopService.getAllShopsWithFetchJoin().map { ShopResponseDto.from(it) }
     }
 }
