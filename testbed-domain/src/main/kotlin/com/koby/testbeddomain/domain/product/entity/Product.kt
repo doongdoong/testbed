@@ -3,12 +3,10 @@ package com.koby.testbeddomain.domain.product.entity
 import com.koby.testbeddomain.domain.shop.entity.Shop
 import jakarta.persistence.*
 
-import org.hibernate.annotations.SQLRestriction
 import java.time.OffsetDateTime
 
 @Entity
 @Table(name = "products")
-@SQLRestriction("date_deleted IS NULL")
 class Product(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

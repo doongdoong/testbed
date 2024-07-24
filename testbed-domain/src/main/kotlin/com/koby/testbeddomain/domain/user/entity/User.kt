@@ -7,12 +7,10 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import org.hibernate.annotations.SQLRestriction
 import java.time.OffsetDateTime
 
 @Entity
 @Table(name = "users")
-@SQLRestriction("date_deleted IS NULL")
 class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

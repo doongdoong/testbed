@@ -1,9 +1,15 @@
 package com.koby.testbedapi.product.controller
 
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import com.koby.testbedapi.product.service.ProductApiService
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(path = ["/product"])
-class ProductController {
+class ProductController(
+    private val productApiService: ProductApiService
+) {
+    @PostMapping
+    fun saveTestProduct() {
+        productApiService.saveTestProduct()
+    }
 }

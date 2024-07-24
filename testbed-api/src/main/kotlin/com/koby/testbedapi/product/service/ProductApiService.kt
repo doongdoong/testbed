@@ -7,4 +7,7 @@ import org.springframework.stereotype.Service
 class ProductApiService(
     private val productService: ProductService,
 ) {
+    fun saveTestProduct() {
+        productService.saveTestProduct()
+    }
 }
