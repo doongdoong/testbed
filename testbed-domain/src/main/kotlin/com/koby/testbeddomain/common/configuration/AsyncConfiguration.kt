@@ -45,4 +45,26 @@ class AsyncConfiguration: AsyncConfigurer {
         executor.initialize()
         return executor
     }
+
+    @Bean
+    fun pricingTaskExecutor(): Executor {
+        val executor = ThreadPoolTaskExecutor()
+        executor.corePoolSize = 2
+        executor.maxPoolSize = 5
+        executor.setQueueCapacity(500)
+        executor.setThreadNamePrefix("PricingExecutor-")
+        executor.initialize()
+        return executor
+    }
+
+    @Bean
+    fun shopTaskExecutor(): Executor {
+        val executor = ThreadPoolTaskExecutor()
+        executor.corePoolSize = 2
+        executor.maxPoolSize = 5
+        executor.setQueueCapacity(500)
+        executor.setThreadNamePrefix("ShopExecutor-")
+        executor.initialize()
+        return executor
+    }
 }
