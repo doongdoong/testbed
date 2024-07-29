@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import
 
 @Import(DomainConfigurationLoader::class)
 @ConfigurationPropertiesScan
-@SpringBootApplication(exclude=[DataSourceAutoConfiguration::class])
+@SpringBootApplication
 class TestbedApiApplication
 
 fun main(args: Array<String>) {
