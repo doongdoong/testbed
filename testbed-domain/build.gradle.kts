@@ -37,5 +37,6 @@ dependencies {
     implementation("com.querydsl:querydsl-apt:$querydslVersion:jakarta")
     implementation("jakarta.persistence:jakarta.persistence-api")
     implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
     kapt("com.querydsl:querydsl-apt:$querydslVersion:jakarta")
 }

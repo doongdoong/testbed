@@ -14,3 +14,14 @@ services:
       - --collation-server=utf8mb4_unicode_ci
     volumes:
       - ./db/mysql/data:/var/lib/mysql
+  redis:
+    image: redis:latest
+    command: redis-server --requirepass admin --port 6379
+    container_name: redis
+    volumes:
+      - ./db/redis/data:/data
+    labels:
+      - "name=redis"
+      - "mode=standalone"
+    ports:
+      - 6379:6379
