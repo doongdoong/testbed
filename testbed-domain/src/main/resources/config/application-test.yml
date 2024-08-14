@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: default
   datasource: # 동일한 DB이지만 마스터-슬레이브 구조로 설정해본다.
     master:
       jdbc-url: jdbc:mysql://localhost:3306/testbed

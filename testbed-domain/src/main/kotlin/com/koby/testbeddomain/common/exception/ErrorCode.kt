@@ -7,5 +7,8 @@ enum class ErrorCode(
     USER_NOT_FOUND("존재하지 않는 사용자입니다."),
 
     /* Shop Exceptions */
-    SHOP_NOT_FOUND("존재하지 않는 샵입니다.")
+    SHOP_NOT_FOUND("존재하지 않는 샵입니다."),
+
+    /* Coupon Exceptions */
+    COUPON_QUANTITY_ZERO("쿠폰의 수량이 0입니다.")
 }
