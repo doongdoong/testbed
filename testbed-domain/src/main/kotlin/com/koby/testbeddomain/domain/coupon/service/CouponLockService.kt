@@ -31,4 +31,8 @@ class CouponLockService(
             }
         }
     }
+
+    fun couponDecrease(id: Long) {
+        couponService.decrease(id)
+    }
 }

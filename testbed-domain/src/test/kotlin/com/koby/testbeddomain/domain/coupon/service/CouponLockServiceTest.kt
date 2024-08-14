@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import java.util.concurrent.Executors
 import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 
 @SpringBootTest(classes = [DomainConfigurationLoader::class])
 @ActiveProfiles("test")
@@ -46,5 +47,31 @@ class CouponLockServiceTest {
         logger.info("최종 쿠폰 갯수: $afterCouponQuantity")
 
         assertEquals((initialCouponQuantity - numberOfThreads), afterCouponQuantity)
+    }
+
+    @Test
+    fun couponQuantityConcurrency2Test() {
+        val initialCouponQuantity = 1000
+        val newCoupon = Coupon(
+            name = "Test Coupon",
+            quantity = initialCouponQuantity
+        )
+        couponJpaRepository.save(newCoupon)
+        val couponId = newCoupon.id
+
+        val numberOfThreads = 100
+        val service = Executors.newFixedThreadPool(100)
+        for (i in 0 until numberOfThreads) {
+            service.execute {
+                couponLockService.couponDecrease(couponId)
+            }
+        }
+
+        Thread.sleep(5000)
+
+        val afterCouponQuantity = couponJpaRepository.findFirstById(couponId)!!.quantity
+        logger.info("최종 쿠폰 갯수: $afterCouponQuantity")
+
+        assertNotEquals((initialCouponQuantity - numberOfThreads), afterCouponQuantity)
     }
 }
